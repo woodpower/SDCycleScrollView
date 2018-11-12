@@ -23,6 +23,6 @@ s.source_files  = "SDCycleScrollView/Lib/SDCycleScrollView/**/*.{h,m}"
 s.requires_arc = true
 
 
-s.dependency 'YYKit', :git => 'https://github.com/woodpower/YYKit.git'
+
 
 end
