@@ -66,7 +66,7 @@
     
     
     
-    SDCycleScrollView *banner2 = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 200, [UIScreen mainScreen].bounds.size.width, 140) delegate:nil placeholderImage:nil];
+    SDCycleScrollView *banner2 = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 200, [UIScreen mainScreen].bounds.size.width, 140) delegate:nil placeholder:nil];
     banner2.pageControlAliment = SDCycleScrollViewPageContolAlimentRight;
     banner2.imageURLStringsGroup = imagesURLStrings;
     banner2.titlesGroup = titles;

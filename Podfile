@@ -3,4 +3,4 @@ target 'SDCycleScrollView'
 
 #use_frameworks!
 
-pod 'SDWebImage', '>= 4.0.0'
+pod 'YYKit', :git => 'https://github.com/woodpower/YYKit.git'

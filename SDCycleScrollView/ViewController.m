@@ -31,7 +31,6 @@
 #import "ViewController.h"
 #import "SDCycleScrollView.h"
 #import "CustomCollectionViewCell.h"
-#import "UIImageView+WebCache.h"
 
 @interface ViewController () <SDCycleScrollViewDelegate>
 
@@ -101,7 +100,7 @@
 // >>>>>>>>>>>>>>>>>>>>>>>>> demo轮播图2 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     
     // 网络加载 --- 创建带标题的图片轮播器
-    SDCycleScrollView *cycleScrollView2 = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 280, w, 180) delegate:self placeholderImage:[UIImage imageNamed:@"placeholder"]];
+    SDCycleScrollView *cycleScrollView2 = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 280, w, 180) delegate:self placeholder:[UIImage imageNamed:@"placeholder"]];
     
     cycleScrollView2.pageControlAliment = SDCycleScrollViewPageContolAlimentRight;
     cycleScrollView2.titlesGroup = titles;
@@ -126,7 +125,7 @@
 // >>>>>>>>>>>>>>>>>>>>>>>>> demo轮播图3 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     
     // 网络加载 --- 创建自定义图片的pageControlDot的图片轮播器
-    SDCycleScrollView *cycleScrollView3 = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 500, w, 180) delegate:self placeholderImage:[UIImage imageNamed:@"placeholder"]];
+    SDCycleScrollView *cycleScrollView3 = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 500, w, 180) delegate:self placeholder:[UIImage imageNamed:@"placeholder"]];
     cycleScrollView3.currentPageDotImage = [UIImage imageNamed:@"pageControlCurrentDot"];
     cycleScrollView3.pageDotImage = [UIImage imageNamed:@"pageControlDot"];
     cycleScrollView3.imageURLStringsGroup = imagesURLStrings;
@@ -137,7 +136,7 @@
     
     // 网络加载 --- 创建只上下滚动展示文字的轮播器
     // 由于模拟器的渲染问题，如果发现轮播时有一条线不必处理，模拟器放大到100%或者真机调试是不会出现那条线的
-    SDCycleScrollView *cycleScrollView4 = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 750, w, 40) delegate:self placeholderImage:nil];
+    SDCycleScrollView *cycleScrollView4 = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 750, w, 40) delegate:self placeholder:nil];
     cycleScrollView4.scrollDirection = UICollectionViewScrollDirectionVertical;
     cycleScrollView4.onlyDisplayText = YES;
     
@@ -155,7 +154,7 @@
     
     // 如果要实现自定义cell的轮播图，必须先实现customCollectionViewCellClassForCycleScrollView:和setupCustomCell:forIndex:代理方法
     
-    _customCellScrollViewDemo = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 820, w, 120) delegate:self placeholderImage:[UIImage imageNamed:@"placeholder"]];
+    _customCellScrollViewDemo = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 820, w, 120) delegate:self placeholder:[UIImage imageNamed:@"placeholder"]];
     _customCellScrollViewDemo.currentPageDotImage = [UIImage imageNamed:@"pageControlCurrentDot"];
     _customCellScrollViewDemo.pageDotImage = [UIImage imageNamed:@"pageControlDot"];
     _customCellScrollViewDemo.imageURLStringsGroup = imagesURLStrings;
@@ -230,7 +229,7 @@
 - (void)setupCustomCell:(UICollectionViewCell *)cell forIndex:(NSInteger)index cycleScrollView:(SDCycleScrollView *)view
 {
     CustomCollectionViewCell *myCell = (CustomCollectionViewCell *)cell;
-    [myCell.imageView sd_setImageWithURL:_imagesURLStrings[index]];
+    [myCell.imageView setImageURL:[NSURL URLWithString:_imagesURLStrings[index]]];
 }
 
 @end
