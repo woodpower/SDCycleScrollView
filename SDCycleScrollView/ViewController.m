@@ -31,6 +31,7 @@
 #import "ViewController.h"
 #import "SDCycleScrollView.h"
 #import "CustomCollectionViewCell.h"
+#import "YYKit.h"
 
 @interface ViewController () <SDCycleScrollViewDelegate>
 

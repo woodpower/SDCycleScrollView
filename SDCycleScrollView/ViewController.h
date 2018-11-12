@@ -29,7 +29,6 @@
  */
 
 #import <UIKit/UIKit.h>
-#import <YYKit/YYKit.h>
 
 @interface ViewController : UIViewController
 
