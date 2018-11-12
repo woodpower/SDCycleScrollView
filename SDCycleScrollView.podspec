@@ -8,13 +8,13 @@ s.homepage     = "https://github.com/woodpower/SDCycleScrollView"
 
 s.license      = "MIT"
 
-s.author       = { "GSD_iOS" => "gsdios@126.com" }
+s.author       = { "GSD_iOS" => "1042648605@qq.com" }
 
 s.platform     = :ios
 s.platform     = :ios, "7.0"
 
 
-s.source       = { :git => "https://github.com/gsdios/SDCycleScrollView.git", :tag => "1.74"}
+s.source       = { :git => "https://github.com/woodpower/SDCycleScrollView.git", :tag => "1.74"}
 
 
 s.source_files  = "SDCycleScrollView/Lib/SDCycleScrollView/**/*.{h,m}"
